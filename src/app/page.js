@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import ServicesSection from './NavbarItems/ServicesSection';
 
 export default function Home() {
   return (
     <div>
-      <h1>This is header</h1>
+      <ServicesSection />
     </div>
   );
 }
