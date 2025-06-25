@@ -13,7 +13,8 @@ const Signup = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    await registerUser(name, email, password);
+   await registerUser({ name, email, password }); 
+
   };
 
   return (
