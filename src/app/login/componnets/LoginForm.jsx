@@ -1,14 +1,27 @@
 'use client'
+import { loginUser } from '@/app/actions/auth/loginUser';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const LoginForm = () => {
-        const handleLogin=e=>{
+    const router=useRouter()
+        const handleLogin=async(e)=>{
       
          e.preventDefault();
     const form = e.target;
  
     const email = form.email.value;
     const password = form.password.value;
+    try {
+        await loginUser('credentials',{email,password})
+        router.push('/')
+        
+    } catch (error) {
+        console.log(error)
+        alert('Authentication failed')
+        
+    }
+    
     }
 
   return (

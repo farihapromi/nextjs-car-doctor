@@ -1,9 +1,8 @@
 'use server';
-
 import dbConnect, { collectionNameObj } from '@/lib/dbConnect';
 import bcrypt from 'bcrypt';
 
-export const registerUser = async (payload) => {
+export const loginUser = async (payload) => {
   const userCollection = dbConnect(collectionNameObj.userCollection);
   //valiudation of user
   const { email, password } = payload;
