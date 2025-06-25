@@ -36,6 +36,8 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    <Link href={'/register'}>Register</Link>
+    <Link href={'/login'}>Login</Link>
     <a className="btn btn-outline">Appointment</a>
   </div>
 </div>

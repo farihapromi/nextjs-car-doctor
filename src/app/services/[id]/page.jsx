@@ -28,7 +28,8 @@ const ServicesDetails = async({params}) => {
         </section>
         {/* IMage section */}
       <section>
-        
+        <Image src={data.img} height={200} width={400} alt={'images'}/>
+        <h2 className="font-bold">{data.title}</h2>
       </section>
       
     </div>
