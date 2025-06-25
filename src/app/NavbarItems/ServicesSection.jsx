@@ -1,10 +1,12 @@
 
 import React from 'react'
 import Image from 'next/image'
-import dbConnect from '@/lib/dbConnect'
+import dbConnect, { collectionNameObj } from '@/lib/dbConnect'
+import Link from 'next/link'
+import { FaArrowRight } from 'react-icons/fa';
 
 const ServicesSection =async () => {
-    const serviceColection=dbConnect('services')
+    const serviceColection=dbConnect(collectionNameObj.serviceColection)
     const data=await serviceColection.find({}).toArray()
 
 
@@ -18,8 +20,23 @@ const ServicesSection =async () => {
                     className='w-full h-full object-fit'
                     src={item.img} width={314} height={208} alt="services"/>
                     </figure>
-                    <h4>{item.title}</h4>
-                    <h3>Price:{item.price}</h3>
+                    <div className="flex justify-between items-center mt-4">
+                      <div >
+                         <h4 className='font-bold text-xl'>{item.title}</h4>
+                         <p className='font-bold text-xl text-orange-500'>Price: {item.price}
+
+                         </p>
+                          
+                      </div>
+                       <Link href={`/services/${item._id}`} className='text-orange-500'>
+                    <FaArrowRight/>
+                    
+                    </Link>
+
+                   
+                    
+                    </div>
+                  
 
                 </div>
             }
