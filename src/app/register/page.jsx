@@ -6,14 +6,14 @@ import registerAnimationData from '../../assets/lottie/register.json';
 import { registerUser } from '../actions/auth/registerUser';
 
 const Signup = () => {
-  const handleRegister = (e) => {
+  const handleRegister = async(e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
-    registerUser(name, email, password);
+    await registerUser(name, email, password);
   };
 
   return (

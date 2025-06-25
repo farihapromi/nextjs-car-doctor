@@ -2,6 +2,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGO_URI;
 export const collectionNameObj = {
   serviceColection: 'services',
+  userCollection: 'users',
 };
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 export default function dbConnect(collectionName) {
