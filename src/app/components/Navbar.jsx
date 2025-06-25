@@ -35,11 +35,16 @@ const Navbar = () => {
       {links}
     </ul>
   </div>
-  <div className="navbar-end">
-    <Link href={'/register'}>Register</Link>
-    <Link href={'/login'}>Login</Link>
-    <a className="btn btn-outline">Appointment</a>
-  </div>
+ <div className="navbar-end space-x-2">
+  <Link href="/register" className="btn btn-outline  bg-orange-500 text-white">
+    Register
+  </Link>
+  <Link href="/login" className="btn btn-outline bg-orange-500 text-white">
+    Login
+  </Link>
+  <a className="btn btn-primary">Appointment</a>
+</div>
+
 </div>
   )
 }

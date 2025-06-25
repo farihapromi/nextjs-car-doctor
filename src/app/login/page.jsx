@@ -7,46 +7,57 @@ import registerAnimationData from '../../assets/lottie/login.json'
 
 
 const Login = () => {
+    const handleLogin=e=>{
+        e.preventDefault()
+    }
 
    
   return (
-   <div className="hero bg-base-200 min-h-screen">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="text-center lg:text-left w-96">
-        <Lottie animationData={registerAnimationData }></Lottie>
-     
-    </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-         <h1 className=" ml-8 mt-4 text-5xl font-bold">Login now!</h1>
-     
-      <form className="card-body" >
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" name ="email" className="input input-bordered" required />
+    <div className="min-h-screen bg-base-200 flex items-center justify-center px-4">
+      <div className="flex flex-col lg:flex-row items-center gap-10 max-w-6xl w-full">
+        {/* Lottie Animation */}
+        <div className="w-full lg:w-1/2">
+          <Lottie animationData={registerAnimationData} loop={true} className="w-full h-auto" />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" name="password"className="input input-bordered" required />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
-        </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
-        </div>
-      </form>
-       <p className="mb-4 ml-4">
-       Don't have account?
-        <Link className='p-2 m-2 bg-blue-500 rounded-lg' href='/register'>Sign Up</Link>
-      </p>
-    
-    </div>
+
+        {/* Signup Card */}
+        <div className="card bg-base-100 w-full max-w-md shadow-2xl">
+          <div className="card-body">
+            <h1 className="text-4xl font-bold text-center mb-6">Login Now</h1>
+<form onSubmit={handleLogin}>
+
+
+  {/* Email */}
+  <div className="form-control mb-4">
+    <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" className="input input-bordered w-full" required />
   </div>
-</div>
+
+  {/* Password */}
+  <div className="form-control mb-6">
+    <label htmlFor="password" className="block text-sm font-medium mb-1">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" className="input input-bordered w-full" required />
+    <label className="mt-1">
+      <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+    </label>
+  </div>
+
+  {/* Submit */}
+  <div className="form-control">
+    <button type="submit" className="btn btn-primary w-full bg-orange-500 text-white">Login</button>
+  </div>
+</form>
+
+            <p className="text-sm text-center mt-6">
+             Don't have an account?{' '}
+              <Link href="/register" className="text-blue-500 font-semibold hover:underline">
+                Register
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

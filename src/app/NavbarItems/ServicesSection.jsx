@@ -18,7 +18,7 @@ const ServicesSection =async () => {
                   <figure className='w-full h-3/4 flex justify-center items-center'>
                     <Image 
                     className='w-full h-full object-fit'
-                    src={item.img} width={314} height={208} alt="services"/>
+                    src={item.img} width={314} height={208} alt={"services"}/>
                     </figure>
                     <div className="flex justify-between items-center mt-4">
                       <div >
